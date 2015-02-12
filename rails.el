@@ -497,11 +497,14 @@ necessary."
 
 (add-hook 'find-file-hooks
           (lambda()
-            (rails-project:with-root
-             (root)
-             (progn
-               (rails-minor-mode t)
-               (rails-apply-for-buffer-type)))))
+            ;; HACK.  Don't turn on rails-minor-mode in Magit's commit msg buffer
+            (if (not (string= (buffer-name) "COMMIT_EDITMSG"))
+                (progn
+                  (rails-project:with-root
+                   (root)
+                   (progn
+                     (rails-minor-mode t)
+                     (rails-apply-for-buffer-type)))))))
 
 ;; Run rails-minor-mode in dired
 
