@@ -78,6 +78,6 @@
 (defun rails-spec:run-this-spec ()
   "Run spec where the point is"
   (interactive)
-  (rails-spec:run (buffer-file-name) (concat "--line " (substring (what-line) 5))))
+  (rails-spec:run (concat (buffer-file-name) ":" (substring (what-line) 5))))
 
 (provide 'rails-spec)
