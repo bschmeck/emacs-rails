@@ -54,7 +54,7 @@
                  (mapconcat 'identity
                             (rails-core:rspec-controller-files (rails-core:current-controller))
                             " "))
-                ((find type '(:rspec-model :rspec-controller :rspec-lib))
+                ((find type '(:rspec-model :rspec-controller :rspec-lib :rspec-api))
                  (buffer-file-name))
                 ((eql type :lib)
                  (rails-core:rspec-lib-file (rails-core:current-lib))))))
