@@ -181,6 +181,7 @@ Emacs w3m browser."
     (:rspec-lib        "spec/lib")
     (:rspec-model      "spec/models")
     (:rspec-api        "spec/api")
+    (:rspec            "spec/")
     (:migration        "db/migrate"))
   "Rails file types -- rails directories map")
 
