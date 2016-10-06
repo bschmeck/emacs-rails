@@ -29,8 +29,8 @@
 
 (defun rails-spec:runner ()
   "Command, that run specs."
-  (if (file-exists-p (rails-core:file "script/spec"))
-      (rails-core:file "script/spec")
+  (if (file-exists-p (rails-core:file "bin/rspec"))
+      (rails-core:file "bin/rspec")
     (rails-core:prepare-command "rspec")))
 
 (defvar rails-spec:last-run nil

@@ -198,10 +198,10 @@ BUFFER-MAJOR-MODE and process-sentinel SENTINEL."
 
 (defun rails-script:find-rails-command (command)
   "Find first of 'script/rails command', 'script/command' or 'rails command' as a list of program & args"
-  (cond ((file-exists-p (rails-core:file "script/rails"))
-         (list rails-ruby-command (rails-core:file "script/rails") command))
-        ((file-exists-p (rails-core:file (format "script/%s" command)))
-         (list rails-ruby-command (rails-core:file (format "script/%s" command))))
+  (cond ((file-exists-p (rails-core:file "bin/rails"))
+         (list rails-ruby-command (rails-core:file "bin/rails") command))
+        ((file-exists-p (rails-core:file (format "bin/%s" command)))
+         (list rails-ruby-command (rails-core:file (format "bin/%s" command))))
         (t (list "rails" command))))
 
 (defun rails-script:run-rails-command (command &rest parameters)
